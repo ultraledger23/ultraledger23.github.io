@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>漫蛙-漫蛙漫画在线阅读_漫蛙网页版入口与更新内容</title>
+<meta name="description" content="漫蛙主题首页，提供漫蛙漫画在线阅读入口、分类浏览、近期更新与阅读提示，帮助读者快速找到想看的漫蛙内容并了解页面使用方式。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23103d33'/%3E%3Ccircle cx='24' cy='28' r='6' fill='%23f4d35e'/%3E%3Ccircle cx='40' cy='28' r='6' fill='%23f4d35e'/%3E%3Cpath d='M18 42c8 8 20 8 28 0' stroke='%2388d6a8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12211c;
+  --deep:#103d33;
+  --deep2:#0b2c25;
+  --mint:#88d6a8;
+  --leaf:#3f9d72;
+  --gold:#f4d35e;
+  --paper:#f6f8f4;
+  --card:#ffffff;
+  --line:#dde6de;
+  --muted:#5c6e66;
+  --radius:18px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 22px}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,248,244,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;min-height:68px;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px}
+.brand svg{width:36px;height:36px;flex:none}
+.brand .name{font-size:20px;color:var(--deep)}
+.nav-links{display:flex;gap:6px;flex-wrap:wrap}
+.nav-links a{
+  padding:8px 12px;border-radius:999px;font-size:14px;color:var(--muted);
+  transition:.2s;white-space:nowrap;
+}
+.nav-links a:hover{background:#e7efe8;color:var(--deep)}
+.nav-cta{
+  background:var(--deep);color:#fff;padding:9px 18px;border-radius:999px;
+  font-size:14px;font-weight:600;white-space:nowrap;
+}
+.nav-cta:hover{background:var(--deep2)}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0f3a30 0%,#123f34 55%,#0a2a23 100%);
+  color:#eaf5ee;
+  padding:64px 0 72px;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(136,214,168,.28),transparent 65%);
+  border-radius:50%;
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1px;color:var(--mint);
+  border:1px solid rgba(136,214,168,.4);border-radius:999px;padding:5px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(38px,6vw,62px);
+  line-height:1.15;margin:0 0 18px;font-weight:800;letter-spacing:2px;
+  color:#fff;
+}
+.hero p.lead{font-size:16.5px;color:#cfe3d6;max-width:520px;margin:0 0 26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--gold);color:#20301f;font-weight:700;
+  padding:12px 26px;border-radius:999px;font-size:15px;
+  transition:.2s;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(244,211,94,.28)}
+.btn-ghost{
+  border:1px solid rgba(234,245,238,.35);color:#eaf5ee;
+  padding:12px 24px;border-radius:999px;font-size:15px;transition:.2s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.08)}
+.hero-stats{display:flex;gap:30px;margin-top:38px;flex-wrap:wrap}
+.hero-stats div{font-size:13px;color:#a9c8b7}
+.hero-stats strong{display:block;font-size:22px;color:#fff;font-weight:700}
+
+/* hero art */
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art .frame{
+  width:100%;max-width:330px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(136,214,168,.28);border-radius:24px;padding:18px;
+}
+.hero-art .frame svg{width:100%;height:auto}
+.hero-art .tag{
+  position:absolute;bottom:-14px;right:6px;background:var(--gold);color:#22301f;
+  font-size:12px;font-weight:700;padding:6px 14px;border-radius:999px;
+}
+
+/* sections */
+section{padding:64px 0}
+.sec-head{margin-bottom:32px;max-width:640px}
+.sec-head h2{font-size:clamp(24px,3.4vw,32px);margin:0 0 10px;color:var(--deep);letter-spacing:.5px}
+.sec-head p{margin:0;color:var(--muted);font-size:15px}
+.kicker{font-size:12.5px;letter-spacing:2px;color:var(--leaf);font-weight:700;margin-bottom:8px}
+
+/* entry cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;transition:.25s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,61,51,.09);border-color:#c4d8ca}
+.card .ico{
+  width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+  background:#e9f4ec;margin-bottom:16px;
+}
+.card .ico svg{width:24px;height:24px}
+.card h3{margin:0 0 8px;font-size:17.5px;color:var(--deep)}
+.card p{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+.card .link{font-size:13.5px;font-weight:700;color:var(--leaf)}
+.card .link::after{content:" →"}
+
+/* browse / filter */
+.browse{background:#eef4ef}
+.filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.chip{
+  border:1px solid #cfdfd3;background:#fff;color:var(--deep);
+  font-size:13.5px;padding:7px 16px;border-radius:999px;cursor:pointer;transition:.2s;
+  font-family:inherit;
+}
+.chip:hover{border-color:var(--leaf)}
+.chip.active{background:var(--deep);color:#fff;border-color:var(--deep)}
+.search-row{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.search-row input{
+  flex:1;min-width:200px;padding:12px 18px;border-radius:999px;border:1px solid #cfdfd3;
+  font-size:14.5px;font-family:inherit;background:#fff;color:var(--ink);outline:none;
+}
+.search-row input:focus{border-color:var(--leaf);box-shadow:0 0 0 3px rgba(63,157,114,.14)}
+.search-row button{
+  padding:12px 26px;border-radius:999px;border:0;background:var(--deep);color:#fff;
+  font-size:14.5px;font-weight:600;cursor:pointer;font-family:inherit;transition:.2s;
+}
+.search-row button:hover{background:var(--deep2)}
+.titles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{
+  background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  transition:.22s;display:flex;flex-direction:column;
+}
+.tcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,61,51,.1)}
+.cover{aspect-ratio:3/4;position:relative;display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;letter-spacing:1px}
+.cover span{position:relative;z-index:2;text-align:center;padding:0 12px;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.cover::before{content:"";position:absolute;inset:0;opacity:.9}
+.c1::before{background:linear-gradient(150deg,#2c7a5b,#123f34)}
+.c2::before{background:linear-gradient(150deg,#b07a2e,#5a3c12)}
+.c3::before{background:linear-gradient(150deg,#3a6ea5,#16283f)}
+.c4::before{background:linear-gradient(150deg,#8a4a6e,#3a1e2e)}
+.c5::before{background:linear-gradient(150deg,#4d8a52,#1d3a22)}
+.c6::before{background:linear-gradient(150deg,#77539b,#2c2040)}
+.c7::before{background:linear-gradient(150deg,#a5562f,#3f200f)}
+.c8::before{background:linear-gradient(150deg,#2f7d80,#123033)}
+.tbody{padding:12px 14px 14px}
+.tbody h4{margin:0 0 4px;font-size:14.5px;color:var(--deep)}
+.tbody p{margin:0;font-size:12.5px;color:var(--muted)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);font-size:14.5px;padding:34px 0}
+
+/* reading notes */
+.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.note{
+  background:#fff;border:1px solid var(--line);border-left:4px solid var(--leaf);
+  border-radius:14px;padding:22px 24px;
+}
+.note h3{margin:0 0 8px;font-size:16.5px;color:var(--deep)}
+.note p{margin:0;font-size:14.5px;color:var(--muted)}
+
+/* faq */
+.faq{max-width:820px}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;margin-bottom:12px;
+}
+details[open]{border-color:#c4d8ca}
+summary{
+  cursor:pointer;font-weight:600;font-size:15px;color:var(--deep);
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:19px;color:var(--leaf);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{margin:12px 0 0;font-size:14.5px;color:var(--muted)}
+
+/* download */
+.dl-band{
+  background:linear-gradient(140deg,#103d33,#0a2a23);color:#eaf5ee;
+  border-radius:24px;padding:44px 40px;display:flex;justify-content:space-between;
+  align-items:center;gap:28px;flex-wrap:wrap;
+}
+.dl-band h2{margin:0 0 8px;font-size:26px;color:#fff;letter-spacing:.5px}
+.dl-band p{margin:0;color:#b6d1c1;font-size:14.5px;max-width:520px}
+.btn-dl{
+  display:inline-block;background:var(--gold);color:#20301f;font-weight:700;
+  padding:13px 34px;border-radius:999px;font-size:15px;
+  pointer-events:none;
+}
+
+/* footer */
+footer.site{background:#0d322a;color:#b7cfc1;padding:44px 0 30px;margin-top:64px}
+.foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:18px}
+.foot-brand svg{width:32px;height:32px}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;font-size:14px}
+.foot-links a:hover{color:var(--mint)}
+.copy{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#8aa89a;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-art{order:-1;max-width:260px;margin:0 auto}
+  .cards{grid-template-columns:1fr 1fr}
+  .titles{grid-template-columns:repeat(3,1fr)}
+  .notes-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media(max-width:620px){
+  .wrap{padding:0 16px}
+  .hero{padding:44px 0 52px}
+  .hero-stats{gap:20px}
+  .cards{grid-template-columns:1fr}
+  .titles{grid-template-columns:1fr 1fr}
+  .dl-band{padding:32px 24px}
+  section{padding:46px 0}
+  .search-row button{flex:1}
+  .nav{min-height:60px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="漫蛙首页">
+      <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#103d33"/>
+        <circle cx="24" cy="27" r="6" fill="#f4d35e"/>
+        <circle cx="40" cy="27" r="6" fill="#f4d35e"/>
+        <path d="M18 41c8 8 20 8 28 0" stroke="#88d6a8" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="name">漫蛙</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#entry">阅读入口</a>
+      <a href="#browse">分类浏览</a>
+      <a href="#notes">阅读须知</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download">下载</a>
+    </nav>
+    <a class="nav-cta" href="#browse">开始浏览</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">漫画阅读 · 主题首页</span>
+        <h1>漫蛙</h1>
+        <p class="lead">漫蛙是一个以漫画阅读为核心的主题站点。这里把入口、分类和阅读说明集中在一页，方便你从漫蛙找到合适的作品，再按照自己的节奏继续阅读。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#browse">浏览漫蛙作品</a>
+          <a class="btn-ghost" href="#notes">阅读须知</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>8</strong>分类作品示例</div>
+          <div><strong>5</strong>阅读入口说明</div>
+          <div><strong>4</strong>常见问题解答</div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="frame">
+          <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+            <rect x="18" y="16" width="264" height="300" rx="16" fill="#f4d35e" opacity=".16"/>
+            <rect x="34" y="32" width="232" height="268" rx="12" fill="#ffffff" opacity=".95"/>
+            <rect x="52" y="52" width="196" height="112" rx="8" fill="#103d33"/>
+            <circle cx="104" cy="94" r="16" fill="#f4d35e"/>
+            <circle cx="152" cy="94" r="16" fill="#f4d35e"/>
+            <path d="M88 128c20 18 52 18 72 0" stroke="#88d6a8" stroke-width="7" fill="none" stroke-linecap="round"/>
+            <rect x="52" y="184" width="150" height="10" rx="5" fill="#cfdfd3"/>
+            <rect x="52" y="206" width="196" height="10" rx="5" fill="#dde6de"/>
+            <rect x="52" y="228" width="120" height="10" rx="5" fill="#dde6de"/>
+            <rect x="52" y="258" width="86" height="26" rx="13" fill="#3f9d72"/>
+          </svg>
+        </div>
+        <span class="tag">漫画阅读入口</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读入口 -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">READING ENTRY</div>
+        <h2>漫蛙阅读入口怎么用</h2>
+        <p>不同读者打开漫蛙的目的并不一样：有人想直接续读，有人想先按分类找题材，还有人只想确认更新节奏。下面把三类常见需求拆开说明。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3f9d72" stroke-width="1.8" stroke-linecap="round"><path d="M4 5h7v14H4z"/><path d="M13 5h7v14h-7z"/></svg>
+          </div>
+          <h3>续读与书签</h3>
+          <p>已经看过的作品，优先从书签或历史记录进入，能省去重新检索的时间。漫蛙的阅读体验以连续翻页为主，中途退出后再回来，建议先确认上次读到的位置。</p>
+          <a class="link" href="#browse">从分类定位作品</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3f9d72" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+          </div>
+          <h3>按题材找新作</h3>
+          <p>不带着具体书名时，用题材标签筛选更有效。漫蛙的分类覆盖热血、日常、悬疑、治愈等常见方向，先缩小范围，再逐部查看简介与章节数量。</p>
+          <a class="link" href="#browse">打开分类浏览</a>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3f9d72" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v18"/><path d="M5 8l7-5 7 5"/><path d="M5 16l7 5 7-5"/></svg>
+          </div>
+          <h3>确认更新节奏</h3>
+          <p>连载作品的更新频率并不统一，短篇与长篇的章节体量差异也大。漫蛙页面上的更新标注只反映该作品的发布节奏，不代表所有作品同步更新。</p>
+          <a class="link" href="#notes">查看阅读须知</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类浏览 -->
+  <section id="browse" class="browse">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">BROWSE BY GENRE</div>
+        <h2>漫蛙分类浏览</h2>
+        <p>下面是一组分类示例，用于说明漫蛙页面上的题材组织方式。点击标签切换分类，或在搜索框输入关键词，列表会即时筛选。</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="题材筛选">
+        <button class="chip active" data-cat="all" type="button">全部</button>
+        <button class="chip" data-cat="热血" type="button">热血</button>
+        <button class="chip" data-cat="日常" type="button">日常</button>
+        <button class="chip" data-cat="悬疑" type="button">悬疑</button>
+        <button class="chip" data-cat="治愈" type="button">治愈</button>
+        <button class="chip" data-cat="奇幻" type="button">奇幻</button>
+      </div>
+
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="输入作品名或题材关键词，例如：日常、悬疑" aria-label="搜索漫蛙作品">
+        <button id="searchBtn" type="button">搜索</button>
+      </div>
+
+      <div class="titles" id="titleList">
+        <article class="tcard" data-cat="热血" data-name="长夜行舟">
+          <div class="cover c1"><span>长夜行舟</span></div>
+          <div class="tbody"><h4>长夜行舟</h4><p>热血 · 连载中 · 少年群像</p></div>
+        </article>
+        <article class="tcard" data-cat="日常" data-name="午后的猫">
+          <div class="cover c2"><span>午后的猫</span></div>
+          <div class="tbody"><h4>午后的猫</h4><p>日常 · 短篇 · 都市生活</p></div>
+        </article>
+        <article class="tcard" data-cat="悬疑" data-name="雾中来信">
+          <div class="cover c3"><span>雾中来信</span></div>
+          <div class="tbody"><h4>雾中来信</h4><p>悬疑 · 连载中 · 推理线索</p></div>
+        </article>
+        <article class="tcard" data-cat="治愈" data-name="慢一点也没关系">
+          <div class="cover c4"><span>慢一点也没关系</span></div>
+          <div class="tbody"><h4>慢一点也没关系</h4><p>治愈 · 连载中 · 生活切片</p></div>
+        </article>
+        <article class="tcard" data-cat="奇幻" data-name="山湖异闻">
+          <div class="cover c5"><span>山湖异闻</span></div>
+          <div class="tbody"><h4>山湖异闻</h4><p>奇幻 · 连载中 · 志怪设定</p></div>
+        </article>
+        <article class="tcard" data-cat="悬疑" data-name="第九个房间">
+          <div class="cover c6"><span>第九个房间</span></div>
+          <div class="tbody"><h4>第九个房间</h4><p>悬疑 · 短篇 · 密室叙事</p></div>
+        </article>
+        <article class="tcard" data-cat="热血" data-name="逆风而上">
+          <div class="cover c7"><span>逆风而上</span></div>
+          <div class="tbody"><h4>逆风而上</h4><p>热血 · 连载中 · 成长线</p></div>
+        </article>
+        <article class="tcard" data-cat="日常" data-name="周末食堂">
+          <div class="cover c8"><span>周末食堂</span></div>
+          <div class="tbody"><h4>周末食堂</h4><p>日常 · 连载中 · 美食日常</p></div>
+        </article>
+        <p class="empty" id="emptyTip" hidden>没有匹配的作品，换个关键词或选择“全部”试试。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 阅读须知 -->
+  <section id="notes">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">READING NOTES</div>
+        <h2>在漫蛙阅读前值得了解的事</h2>
+        <p>以下内容帮助第一次访问漫蛙的读者建立合理预期，涉及章节节奏、分类边界与阅读设备三个方面。</p>
+      </div>
+      <div class="notes-grid">
+        <div class="note">
+          <h3>章节节奏因作品而异</h3>
+          <p>漫蛙上不同作品的章节长度差别明显。短篇往往一话讲完一个小故事，长篇则需要连续多话才能推进主线。开始阅读前先看章节总数与最近更新，比直接跳到最后一话更稳妥。</p>
+        </div>
+        <div class="note">
+          <h3>分类标签是辅助而非结论</h3>
+          <p>题材标签用于快速缩小范围，但同一部作品可能同时具备日常与治愈的气质。漫蛙的分类展示的是主要方向，具体风格仍以简介和试读的前几页为准。</p>
+        </div>
+        <div class="note">
+          <h3>竖屏阅读更省操作</h3>
+          <p>大多数漫画按竖屏分镜设计，在手机上滚动阅读比横向翻页更连贯。屏幕亮度与环境光差距过大时，适当调暗能减少长时间阅读的疲劳感。</p>
+        </div>
+        <div class="note">
+          <h3>留意作品的更新标注</h3>
+          <p>更新标注说明该作品当前的发布状态，并不等同于全站同步更新。若某部作品长时间未更新，可以先收藏，再隔一段时间回到漫蛙查看变化。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>漫蛙常见问题</h2>
+        <p>整理了几条读者最常提出的问题，答案只针对本页展示的功能范围。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>漫蛙首页能直接做什么？</summary>
+          <p>首页提供阅读入口说明、分类浏览和搜索筛选三部分。你可以先在分类区按题材定位作品，再用搜索框输入书名关键词，列表会即时更新。</p>
+        </details>
+        <details>
+          <summary>搜索不到作品怎么办？</summary>
+          <p>先确认关键词是否包含错别字，再尝试只输入题材词或作品名的前两个字。若列表提示没有匹配项，点击“全部”标签可恢复完整列表。</p>
+        </details>
+        <details>
+          <summary>分类标签可以多选吗？</summary>
+          <p>当前分类为单选模式，一次只展示一个题材下的作品。需要跨题材查找时，使用搜索框输入关键词更直接。</p>
+        </details>
+        <details>
+          <summary>下载入口现在能用吗？</summary>
+          <p>页面底部的下载按钮当前处于占位状态，尚未接入真实文件地址，点击不会有下载动作。正式地址上线后会替换该入口。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download" style="padding-top:0">
+    <div class="wrap">
+      <div class="dl-band">
+        <div>
+          <h2>漫蛙阅读资料下载</h2>
+          <p>整理了一份分类索引，便于离线查看题材分布与作品示例。下载入口当前为占位状态，地址接入后即可直接获取。</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#1a4f42"/>
+          <circle cx="24" cy="27" r="6" fill="#f4d35e"/>
+          <circle cx="40" cy="27" r="6" fill="#f4d35e"/>
+          <path d="M18 41c8 8 20 8 28 0" stroke="#88d6a8" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span>漫蛙</span>
+      </div>
+      <nav class="foot-links" aria-label="页尾导航">
+        <a href="#entry">阅读入口</a>
+        <a href="#browse">分类浏览</a>
+        <a href="#notes">阅读须知</a>
+        <a href="#faq">常见问题</a>
+        <a href="#download">下载</a>
+      </nav>
+    </div>
+    <div class="copy">
+      <span>漫蛙 · 漫画阅读主题首页</span>
+      <span>页面内容以分类与阅读说明为主，作品信息为示例展示。</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.tcard'));
+  var input = document.getElementById('searchInput');
+  var btn = document.getElementById('searchBtn');
+  var empty = document.getElementById('emptyTip');
+  var currentCat = 'all';
+
+  function apply(){
+    var kw = (input.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var okCat = currentCat === 'all' || c.getAttribute('data-cat') === currentCat;
+      var name = (c.getAttribute('data-name') || '').toLowerCase();
+      var cat = (c.getAttribute('data-cat') || '').toLowerCase();
+      var okKw = !kw || name.indexOf(kw) > -1 || cat.indexOf(kw) > -1;
+      var show = okCat && okKw;
+      c.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    empty.hidden = shown !== 0;
+  }
+
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(x){ x.classList.remove('active'); });
+      chip.classList.add('active');
+      currentCat = chip.getAttribute('data-cat');
+      apply();
+    });
+  });
+
+  btn.addEventListener('click', apply);
+  input.addEventListener('input', apply);
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); apply(); }
+  });
+})();
+</script>
+</body>
+</html>
