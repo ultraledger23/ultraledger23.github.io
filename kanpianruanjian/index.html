@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>看片软件免费-免费看片软件哪个好用_手机看片软件免费下载推荐</title>
+<meta name="description" content="看片软件免费主题首页，梳理免费看片软件的常见类型、功能差异与选择要点，说明手机端使用免费看片软件时需要注意的安全与体验问题，并给出便捷的查找入口。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111a2b'/%3E%3Cpath d='M18 20h28a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4V24a4 4 0 0 1 4-4z' fill='none' stroke='%233ddc97' stroke-width='4'/%3E%3Cpath d='M28 27l10 5-10 5z' fill='%233ddc97'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0d1220;
+    --bg-soft:#141b2e;
+    --card:#182136;
+    --line:#25304a;
+    --text:#e8edf7;
+    --muted:#9aa8c2;
+    --accent:#3ddc97;
+    --accent-2:#5aa9ff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:
+      radial-gradient(900px 420px at 85% -8%, rgba(90,169,255,.16), transparent 60%),
+      radial-gradient(700px 380px at 5% 0%, rgba(61,220,151,.12), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(13,18,32,.86);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .navbar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:.3px;white-space:nowrap}
+  .logo svg{width:30px;height:30px;flex:none}
+  nav.main{display:flex;gap:26px;font-size:14.5px;color:var(--muted)}
+  nav.main a{transition:color .2s}
+  nav.main a:hover{color:var(--accent)}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--accent);color:#06210f;font-weight:600;font-size:14px;
+    padding:8px 16px;border-radius:999px;white-space:nowrap;
+  }
+  .nav-cta:hover{filter:brightness(1.08)}
+  .menu-toggle{display:none}
+
+  /* hero */
+  .hero{padding:64px 0 48px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--accent);
+    border:1px solid rgba(61,220,151,.35);
+    background:rgba(61,220,151,.08);
+    padding:5px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  h1{font-size:clamp(30px,4.6vw,46px);line-height:1.22;font-weight:800;letter-spacing:-.5px}
+  h1 .hl{color:var(--accent)}
+  .hero p.lead{margin-top:18px;color:var(--muted);font-size:16.5px;max-width:34em}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:10px;font-weight:600;font-size:15px;
+    transition:transform .15s,filter .2s;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:linear-gradient(135deg,#3ddc97,#2fb37b);color:#06210f}
+  .btn-ghost{border:1px solid var(--line);background:var(--bg-soft);color:var(--text)}
+  .btn[aria-disabled="true"]{opacity:.9;cursor:default}
+
+  .hero-art{
+    background:linear-gradient(160deg,var(--card),#101728);
+    border:1px solid var(--line);border-radius:22px;
+    padding:20px;position:relative;
+  }
+  .hero-art svg{width:100%;height:auto;display:block}
+  .float-tag{
+    position:absolute;bottom:-14px;left:18px;
+    background:var(--bg-soft);border:1px solid var(--line);
+    border-radius:10px;padding:8px 14px;font-size:13px;color:var(--muted);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+  }
+  .float-tag strong{color:var(--accent)}
+
+  /* stats strip */
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    background:rgba(20,27,46,.6);
+  }
+  .strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:22px 0}
+  .stat{text-align:center}
+  .stat b{display:block;font-size:20px;color:var(--accent);font-weight:700}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  /* sections */
+  section{padding:56px 0}
+  .sec-head{max-width:44em;margin-bottom:32px}
+  .sec-head h2{font-size:clamp(22px,2.8vw,29px);font-weight:700;letter-spacing:-.3px}
+  .sec-head p{margin-top:12px;color:var(--muted);font-size:15.5px}
+  .kicker{font-size:13px;color:var(--accent-2);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .card{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;transition:border-color .2s,transform .2s;
+  }
+  .card:hover{border-color:rgba(61,220,151,.45);transform:translateY(-3px)}
+  .card .ico{
+    width:42px;height:42px;border-radius:10px;display:grid;place-items:center;
+    background:rgba(61,220,151,.1);border:1px solid rgba(61,220,151,.25);margin-bottom:16px;
+  }
+  .card .ico svg{width:22px;height:22px}
+  .card h3{font-size:17px;font-weight:700;margin-bottom:10px}
+  .card p{font-size:14.5px;color:var(--muted)}
+
+  /* types table-ish list */
+  .type-list{display:grid;gap:14px}
+  .type-row{
+    display:grid;grid-template-columns:180px 1fr;gap:20px;
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 24px;align-items:start;
+  }
+  .type-row h3{font-size:16px;font-weight:700;color:var(--accent)}
+  .type-row p{font-size:14.5px;color:var(--muted)}
+
+  /* tips */
+  .tips-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .tip{
+    background:linear-gradient(160deg,var(--card),#121a2c);
+    border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;gap:16px;
+  }
+  .tip .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    display:grid;place-items:center;font-weight:700;font-size:14px;
+    background:rgba(90,169,255,.14);color:var(--accent-2);border:1px solid rgba(90,169,255,.3);
+  }
+  .tip h3{font-size:16px;margin-bottom:6px}
+  .tip p{font-size:14.5px;color:var(--muted)}
+
+  /* faq */
+  .faq-list{display:grid;gap:12px;max-width:52em}
+  details{
+    background:var(--bg-soft);border:1px solid var(--line);border-radius:12px;
+    padding:16px 20px;
+  }
+  details[open]{border-color:rgba(61,220,151,.4)}
+  summary{
+    cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--accent);font-size:20px;line-height:1;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:12px;font-size:14.5px;color:var(--muted)}
+
+  /* cta band */
+  .cta-band{
+    background:linear-gradient(135deg,rgba(61,220,151,.14),rgba(90,169,255,.12));
+    border:1px solid var(--line);border-radius:20px;
+    padding:40px 32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .cta-band h2{font-size:clamp(20px,2.6vw,26px);font-weight:700;max-width:24em}
+  .cta-band p{color:var(--muted);font-size:14.5px;margin-top:10px;max-width:36em}
+
+  /* footer */
+  footer.site{border-top:1px solid var(--line);background:#0a0f1b;padding:40px 0 30px;margin-top:20px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+  .foot-brand p{color:var(--muted);font-size:14px;margin-top:12px;max-width:26em}
+  .foot-col h4{font-size:14px;font-weight:700;margin-bottom:12px;color:var(--text)}
+  .foot-col a{display:block;color:var(--muted);font-size:14px;padding:4px 0}
+  .foot-col a:hover{color:var(--accent)}
+  .foot-bottom{
+    margin-top:32px;padding-top:20px;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;
+    font-size:13px;color:#6d7a94;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    .hero-art{order:2}
+    .cards{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:720px){
+    nav.main{display:none}
+    nav.main.open{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:64px;left:0;right:0;
+      background:var(--bg-soft);border-bottom:1px solid var(--line);
+      padding:8px 22px 16px;
+    }
+    nav.main.open a{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--text)}
+    .menu-toggle{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:40px;height:40px;border-radius:10px;border:1px solid var(--line);
+      background:var(--bg-soft);color:var(--text);cursor:pointer;
+    }
+    .nav-cta{display:none}
+    .hero{padding:40px 0 34px}
+    .strip-inner{grid-template-columns:1fr 1fr;gap:16px}
+    section{padding:40px 0}
+    .cards{grid-template-columns:1fr}
+    .type-row{grid-template-columns:1fr;gap:8px}
+    .tips-grid{grid-template-columns:1fr}
+    .cta-band{padding:28px 22px}
+    .foot-grid{grid-template-columns:1fr;gap:24px}
+    .float-tag{position:static;margin-top:14px;display:inline-block}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;scroll-behavior:auto!important}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap navbar">
+    <a class="logo" href="#top" aria-label="看片软件免费 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#111a2b"/>
+        <rect x="13" y="19" width="38" height="26" rx="5" fill="none" stroke="#3ddc97" stroke-width="3.4"/>
+        <path d="M28 26l11 6-11 6z" fill="#3ddc97"/>
+      </svg>
+      <span>看片软件免费</span>
+    </a>
+
+    <nav class="main" id="mainNav">
+      <a href="#types">软件类型</a>
+      <a href="#choose">选择要点</a>
+      <a href="#safety">使用安全</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+
+    <div style="display:flex;align-items:center;gap:10px">
+      <a class="nav-cta" href="#download">获取入口</a>
+      <button class="menu-toggle" id="menuBtn" aria-label="展开导航" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="6"/></svg>
+          免费观看 · 移动端友好
+        </span>
+        <h1>看片软件免费</h1>
+        <p class="lead">
+          看片软件免费，指的是无需付费订阅即可播放影视内容的客户端工具。这个页面把免费看片软件的常见形态、功能差异、挑选思路与使用安全整理在一处，帮助你在众多选项里快速缩小范围，找到适合自己的那一个。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#types">
+            了解软件类型
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#choose">挑选要点</a>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 300" role="presentation">
+          <defs>
+            <linearGradient id="scr" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1e2b47"/>
+              <stop offset="1" stop-color="#121a2c"/>
+            </linearGradient>
+          </defs>
+          <rect x="24" y="30" width="300" height="188" rx="14" fill="url(#scr)" stroke="#2c3a59" stroke-width="1.5"/>
+          <path d="M150 104l52 30-52 30z" fill="#3ddc97" opacity=".95"/>
+          <rect x="24" y="230" width="300" height="10" rx="5" fill="#1b2540"/>
+          <rect x="60" y="248" width="240" height="8" rx="4" fill="#1b2540"/>
+          <rect x="60" y="248" width="130" height="8" rx="4" fill="#3ddc97" opacity=".7"/>
+          <rect x="344" y="72" width="52" height="96" rx="10" fill="#141d31" stroke="#2c3a59" stroke-width="1.5"/>
+          <rect x="354" y="86" width="32" height="46" rx="5" fill="#22304d"/>
+          <circle cx="370" cy="148" r="5" fill="#3ddc97"/>
+          <circle cx="332" cy="46" r="16" fill="none" stroke="#5aa9ff" stroke-width="2" opacity=".6"/>
+          <path d="M326 46l5 5 9-10" stroke="#5aa9ff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="float-tag">无需付费即可开始 · <strong>先看类型再挑选</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="stat"><b>3 类</b><span>常见免费看片软件形态</span></div>
+      <div class="stat"><b>4 项</b><span>挑选时优先核对的条件</span></div>
+      <div class="stat"><b>手机优先</b><span>小屏阅读与操作适配</span></div>
+      <div class="stat"><b>0 订阅</b><span>免费模式的典型特征</span></div>
+    </div>
+  </div>
+
+  <!-- TYPES -->
+  <section id="types">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">软件形态</p>
+        <h2>免费看片软件常见的三种类型</h2>
+        <p>同样是看片软件免费，背后的产品逻辑并不一样。先分清类型，再比较具体功能，能少走很多弯路。</p>
+      </div>
+
+      <div class="type-list">
+        <div class="type-row">
+          <h3>聚合型播放器</h3>
+          <p>把多个内容来源整合进一个界面，用户在一个客户端里就能切换不同片源。这类看片软件免费体验通常体现在界面统一、操作路径短，但片源质量与稳定性取决于所聚合的来源，实际观看效果会随时间波动。</p>
+        </div>
+        <div class="type-row">
+          <h3>本地播放工具</h3>
+          <p>本身不提供内容，只负责解码播放本地或已下载的视频文件。免费看片软件中这一类对设备性能要求较高，优势是没有内容版权争议，缺点是需要自己准备片源，适合已有视频文件的用户。</p>
+        </div>
+        <div class="type-row">
+          <h3>轻量在线观看端</h3>
+          <p>以网页或小型客户端形式存在，打开即用，安装负担小。看片软件免费的使用门槛在这种形态里最低，但功能相对基础，播放清晰度、字幕支持和缓存能力往往是取舍重点。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE -->
+  <section id="choose" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">挑选思路</p>
+        <h2>判断一款看片软件免费值不值得用</h2>
+        <p>免费不等于零成本，时间、隐私和误装风险都是隐形成本。下面四个维度可以按顺序核对。</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+          </div>
+          <h3>来源是否清楚</h3>
+          <p>优先选择能说明开发者、版本号和更新时间的看片软件免费工具。来源模糊、要求过多权限的安装包，应直接放弃。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17V9m5 8V5m5 12v-6m5 6V8"/></svg>
+          </div>
+          <h3>播放是否稳定</h3>
+          <p>免费看片软件的实际价值在于能不能顺畅播放。拖动进度、切换清晰度、连续观看半小时，是三个简单的自测动作。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          </div>
+          <h3>手机端是否顺手</h3>
+          <p>多数人用看片软件免费是在手机上。竖屏浏览、横屏播放、手势调节音量和亮度是否自然，直接决定长期使用感受。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h3>广告是否克制</h3>
+          <p>免费模式常以广告支撑运营。可以接受启动页或片头广告，但频繁弹窗、遮挡播放控件的广告形式会明显影响观看。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h12M3 18h7"/></svg>
+          </div>
+          <h3>功能是否够用</h3>
+          <p>字幕切换、倍速播放、断点续看是高频功能。看片软件免费并不要求功能堆叠，关键项齐全即可，多余功能反而增加学习成本。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3ddc97" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg>
+          </div>
+          <h3>能否随时卸载</h3>
+          <p>好的看片软件免费工具不会把用户困住。安装后能正常卸载、不残留后台服务、不频繁自启，是判断其是否规范的一条实用标准。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section id="safety" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">使用安全</p>
+        <h2>免费看片软件使用时的四点提醒</h2>
+        <p>免费看片软件的使用体验和安全边界，很大程度上由使用习惯决定。以下做法不复杂，但能规避大部分常见问题。</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip">
+          <div class="num">01</div>
+          <div>
+            <h3>只从可辨识的渠道获取</h3>
+            <p>安装包尽量来自能看清名称与版本的页面。来历不明的链接、陌生人转发的文件，即使标注为看片软件免费，也不建议安装。</p>
+          </div>
+        </div>
+        <div class="tip">
+          <div class="num">02</div>
+          <div>
+            <h3>控制授权范围</h3>
+            <p>播放类工具不需要通讯录、短信等权限。安装时逐项查看权限请求，超出播放与存储范围的授权可以拒绝。</p>
+          </div>
+        </div>
+        <div class="tip">
+          <div class="num">03</div>
+          <div>
+            <h3>不在播放器内输入账号密码</h3>
+            <p>免费看片软件不应要求登录支付账户或社交账号。遇到强制登录才能观看的页面，直接退出是更稳妥的选择。</p>
+          </div>
+        </div>
+        <div class="tip">
+          <div class="num">04</div>
+          <div>
+            <h3>保持系统与浏览器更新</h3>
+            <p>在线观看类看片软件免费入口多在浏览器中运行，及时更新系统和浏览器，能减少脚本类风险带来的影响。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">常见问题</p>
+        <h2>关于看片软件免费的几个疑问</h2>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>免费的看片软件一定带广告吗？</summary>
+          <p>多数免费看片软件以广告维持运营，但广告形式差别很大。启动页和片头短广告较常见，密集弹窗或遮挡播放控件则属于体验较差的情况。挑选时可把广告克制程度作为一项参考。</p>
+        </details>
+        <details>
+          <summary>看片软件免费，为什么还提示开通会员？</summary>
+          <p>部分工具采用基础功能免费、进阶功能付费的模式，例如高清画质或去广告。这类产品仍可归入免费看片软件范畴，但使用前应看清免费范围，避免误以为全部功能都不收费。</p>
+        </details>
+        <details>
+          <summary>手机和电脑应该选同一种吗？</summary>
+          <p>不一定。手机端更看重竖屏浏览与手势操作，电脑端更看重窗口缩放与多格式支持。看片软件免费的选择可以按主要使用设备来定，不必强求两端一致。</p>
+        </details>
+        <details>
+          <summary>播放卡顿是软件问题还是网络问题？</summary>
+          <p>可以先切换清晰度或换一个片源测试。若切换后恢复流畅，多半与来源线路有关；若普遍卡顿，则更可能是网络或设备解码能力的问题。逐步排除比直接更换软件更有效率。</p>
+        </details>
+        <details>
+          <summary>下载入口什么时候可用？</summary>
+          <p>当前页面的获取入口处于占位状态，正式地址尚未接入。你可以先参考上文软件类型与挑选要点，确定自己的需求方向，入口开放后即可直接取用。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="download" style="padding-top:0;padding-bottom:64px">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>先定需求，再看片软件免费的选择就简单了</h2>
+          <p>聚合播放、本地解码还是轻量观看，取决于你手头有什么片源、主要在什么设备上看。想清楚这两点，再对照上面的四个维度逐项核对，基本就能筛出合适的一款。</p>
+        </div>
+        <a class="btn btn-primary" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="pointer-events:none">
+          下载
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#111a2b"/>
+            <rect x="13" y="19" width="38" height="26" rx="5" fill="none" stroke="#3ddc97" stroke-width="3.4"/>
+            <path d="M28 26l11 6-11 6z" fill="#3ddc97"/>
+          </svg>
+          <span>看片软件免费</span>
+        </a>
+        <p>围绕看片软件免费这一主题，整理软件类型、挑选维度与使用安全方面的内容，帮助访问者按自身需求做出判断。</p>
+      </div>
+
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#types">软件类型</a>
+        <a href="#choose">选择要点</a>
+        <a href="#safety">使用安全</a>
+        <a href="#faq">常见问题</a>
+      </div>
+
+      <div class="foot-col">
+        <h4>重点内容</h4>
+        <a href="#choose">免费看片软件挑选维度</a>
+        <a href="#safety">安装与授权注意事项</a>
+        <a href="#faq">会员与广告的常见区分</a>
+        <a href="#download">获取入口</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>看片软件免费 · 主题首页</span>
+      <span>内容用于信息参考，请遵守当地法律法规与平台规则</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var nav = document.getElementById('mainNav');
+    if(!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.setAttribute('aria-label', open ? '收起导航' : '展开导航');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded','false');
+        btn.setAttribute('aria-label','展开导航');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
