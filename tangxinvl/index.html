@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心vlog-糖心vlog视频_糖心vlog日常内容_糖心vlog观看</title>
+<meta name="description" content="糖心vlog主题首页，汇集糖心vlog视频分类、日常内容看点与观看入口，帮助你快速了解糖心vlog的栏目结构与内容方向。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ff5c8a'/%3E%3Cpath d='M24 20l22 12-22 12z' fill='%23fff'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --pink:#ff5c8a;
+    --pink-deep:#e03b6b;
+    --ink:#1f1b24;
+    --ink-soft:#5b5464;
+    --bg:#fff8fa;
+    --card:#ffffff;
+    --line:#f3dfe6;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,248,250,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .head-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:18px;min-height:68px;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--ink);}
+  .logo-mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,#ff8aab,#ff5c8a);display:grid;place-items:center;box-shadow:0 6px 14px rgba(255,92,138,.32);}
+  .logo-mark svg{width:16px;height:16px;}
+  nav.main-nav{display:flex;gap:26px;font-size:15px;color:var(--ink-soft);}
+  nav.main-nav a{position:relative;padding:4px 0;transition:color .2s;}
+  nav.main-nav a:hover{color:var(--pink-deep);}
+  nav.main-nav a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--pink);transition:width .25s;border-radius:2px;}
+  nav.main-nav a:hover::after{width:100%;}
+  .head-cta{
+    display:inline-flex;align-items:center;gap:6px;
+    background:var(--pink);color:#fff;font-size:14px;font-weight:600;
+    padding:9px 18px;border-radius:999px;
+    box-shadow:0 8px 18px rgba(255,92,138,.28);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .head-cta:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(255,92,138,.36);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:40px;height:38px;cursor:pointer;align-items:center;justify-content:center;}
+  .menu-toggle span{display:block;width:18px;height:2px;background:var(--ink);position:relative;}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);}
+  .menu-toggle span::before{top:-6px;}
+  .menu-toggle span::after{top:6px;}
+
+  /* hero */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:64px 0 56px;
+    background:radial-gradient(1000px 420px at 82% -10%,#ffe1ea 0%,rgba(255,248,250,0) 70%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;color:var(--pink-deep);
+    background:#ffeef3;border:1px solid #ffd6e1;
+    padding:5px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--pink);display:block;}
+  h1{
+    font-size:clamp(34px,5.2vw,54px);
+    line-height:1.18;font-weight:800;letter-spacing:-.5px;
+    margin-bottom:18px;
+  }
+  h1 em{font-style:normal;color:var(--pink-deep);}
+  .hero-lead{font-size:16.5px;color:var(--ink-soft);max-width:30em;margin-bottom:26px;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+  .btn-primary{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--pink);color:#fff;font-weight:700;font-size:15.5px;
+    padding:13px 28px;border-radius:999px;
+    box-shadow:0 12px 26px rgba(255,92,138,.32);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(255,92,138,.4);}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1.5px solid #ffc9d8;color:var(--pink-deep);
+    font-weight:600;font-size:15px;padding:12px 24px;border-radius:999px;
+    background:#fff;transition:background .2s,border-color .2s;
+  }
+  .btn-ghost:hover{background:#fff2f6;border-color:var(--pink);}
+  .hero-stats{display:flex;gap:32px;margin-top:34px;flex-wrap:wrap;}
+  .stat b{display:block;font-size:22px;color:var(--ink);font-weight:800;}
+  .stat span{font-size:13px;color:var(--ink-soft);}
+
+  .hero-art{
+    position:relative;border-radius:26px;overflow:hidden;
+    background:linear-gradient(150deg,#ffd9e4 0%,#ffeef3 55%,#fff 100%);
+    border:1px solid #ffe0e9;
+    box-shadow:0 24px 50px rgba(224,59,107,.14);
+    padding:26px;
+  }
+  .hero-art .screen{
+    border-radius:16px;background:#2b2330;overflow:hidden;
+    box-shadow:0 14px 30px rgba(43,35,48,.28);
+  }
+  .screen-top{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#3a3040;}
+  .screen-top i{width:8px;height:8px;border-radius:50%;background:#ff8fa8;display:block;}
+  .screen-top i:nth-child(2){background:#ffd28f;}
+  .screen-top i:nth-child(3){background:#9be3b0;}
+  .screen-body{position:relative;aspect-ratio:16/10;background:linear-gradient(140deg,#ff9fbb,#b58bd6 60%,#7b6fd0);}
+  .play-badge{
+    position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;
+    background:rgba(255,255,255,.9);display:grid;place-items:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.22);
+  }
+  .play-badge svg{width:22px;height:22px;margin-left:4px;}
+  .screen-cap{
+    position:absolute;left:14px;bottom:12px;right:14px;
+    display:flex;align-items:center;justify-content:space-between;
+    color:#fff;font-size:12.5px;letter-spacing:.3px;
+  }
+  .screen-cap span{background:rgba(0,0,0,.28);padding:3px 10px;border-radius:999px;backdrop-filter:blur(4px);}
+  .art-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+  .art-tags span{font-size:12.5px;color:#b03a60;background:#fff;border:1px solid #ffd6e1;padding:4px 12px;border-radius:999px;}
+
+  /* section base */
+  section{padding:56px 0;}
+  .sec-head{max-width:640px;margin-bottom:32px;}
+  .sec-head .kicker{font-size:13px;font-weight:700;color:var(--pink-deep);letter-spacing:1.4px;text-transform:uppercase;margin-bottom:8px;}
+  .sec-head h2{font-size:clamp(23px,3vw,30px);font-weight:800;line-height:1.3;letter-spacing:-.3px;}
+  .sec-head p{margin-top:10px;color:var(--ink-soft);font-size:15px;}
+
+  /* categories */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .cat-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;transition:transform .22s,box-shadow .22s,border-color .22s;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .cat-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(224,59,107,.12);border-color:#ffd0dd;}
+  .cat-icon{
+    width:44px;height:44px;border-radius:13px;display:grid;place-items:center;
+    background:#fff0f4;border:1px solid #ffdde6;
+  }
+  .cat-icon svg{width:22px;height:22px;stroke:var(--pink-deep);}
+  .cat-card h3{font-size:16.5px;font-weight:700;}
+  .cat-card p{font-size:14px;color:var(--ink-soft);line-height:1.7;}
+  .cat-card .more{font-size:13.5px;font-weight:600;color:var(--pink-deep);margin-top:auto;}
+
+  /* highlights list */
+  .hl-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px 40px;}
+  .hl-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px dashed var(--line);}
+  .hl-num{
+    flex:0 0 34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#ff8aab,#ff5c8a);
+    color:#fff;font-weight:800;font-size:14px;display:grid;place-items:center;
+  }
+  .hl-item h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+  .hl-item p{font-size:14.2px;color:var(--ink-soft);}
+
+  /* about block */
+  .about{
+    background:#fff;border:1px solid var(--line);border-radius:24px;
+    padding:38px 36px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+  }
+  .about h2{font-size:25px;font-weight:800;margin-bottom:14px;line-height:1.35;}
+  .about p{font-size:15px;color:var(--ink-soft);margin-bottom:12px;}
+  .about p:last-child{margin-bottom:0;}
+  .about-visual{
+    border-radius:18px;background:linear-gradient(160deg,#ffe3ec,#f3e6ff);
+    padding:22px;display:grid;gap:12px;
+  }
+  .mini-row{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:12px 14px;box-shadow:0 6px 16px rgba(224,59,107,.07);}
+  .mini-dot{width:30px;height:30px;border-radius:9px;background:#ffeff4;display:grid;place-items:center;flex:0 0 auto;}
+  .mini-dot svg{width:15px;height:15px;stroke:var(--pink-deep);}
+  .mini-row b{font-size:13.5px;display:block;}
+  .mini-row span{font-size:12px;color:var(--ink-soft);}
+
+  /* faq */
+  .faq-list{display:grid;gap:14px;}
+  details{
+    background:#fff;border:1px solid var(--line);border-radius:14px;
+    padding:16px 20px;transition:border-color .2s;
+  }
+  details[open]{border-color:#ffd0dd;box-shadow:0 10px 24px rgba(224,59,107,.08);}
+  summary{
+    cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:20px;color:var(--pink-deep);font-weight:400;line-height:1;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;font-size:14.4px;color:var(--ink-soft);}
+
+  /* cta band */
+  .band{
+    margin:12px 0 0;border-radius:24px;overflow:hidden;position:relative;
+    background:linear-gradient(120deg,#ff5c8a,#ff8aab 55%,#c98ae0);
+    color:#fff;padding:44px 40px;
+    display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+  }
+  .band h2{font-size:clamp(21px,2.8vw,27px);font-weight:800;line-height:1.35;max-width:22em;}
+  .band p{margin-top:8px;font-size:14.5px;color:rgba(255,255,255,.9);max-width:34em;}
+  .band .band-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-white{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink-deep);
+    font-weight:700;font-size:15px;padding:12px 26px;border-radius:999px;
+    box-shadow:0 10px 24px rgba(120,20,60,.2);transition:transform .2s;
+  }
+  .btn-white:hover{transform:translateY(-2px);}
+  .btn-line{
+    display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.7);
+    color:#fff;font-weight:600;font-size:15px;padding:11px 24px;border-radius:999px;
+    transition:background .2s;
+  }
+  .btn-line:hover{background:rgba(255,255,255,.14);}
+  .btn-line[aria-disabled="true"]{pointer-events:none;opacity:.85;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:56px;padding:40px 0 34px;background:#fffafb;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px;}
+  .foot-brand p{font-size:13.8px;color:var(--ink-soft);margin-top:12px;max-width:26em;}
+  .foot-col h4{font-size:14px;font-weight:700;margin-bottom:12px;}
+  .foot-col a{display:block;font-size:13.5px;color:var(--ink-soft);padding:4px 0;transition:color .2s;}
+  .foot-col a:hover{color:var(--pink-deep);}
+  .foot-bottom{
+    margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    font-size:12.8px;color:#968da0;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:34px;}
+    .hero-art{order:-1;}
+    .cat-grid{grid-template-columns:1fr 1fr;}
+    .about{grid-template-columns:1fr;padding:30px 24px;gap:26px;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    nav.main-nav{
+      display:none;position:absolute;top:68px;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);
+      flex-direction:column;gap:0;padding:8px 20px 16px;
+      box-shadow:0 16px 24px rgba(224,59,107,.08);
+    }
+    nav.main-nav.open{display:flex;}
+    nav.main-nav a{padding:11px 0;border-bottom:1px solid #fbeef2;}
+    .menu-toggle{display:flex;}
+    .head-cta{display:none;}
+  }
+  @media (max-width:640px){
+    .hero{padding:34px 0 40px;}
+    .cat-grid{grid-template-columns:1fr;}
+    .hl-wrap{grid-template-columns:1fr;gap:0;}
+    section{padding:42px 0;}
+    .band{padding:32px 24px;}
+    .foot-grid{grid-template-columns:1fr;gap:24px;}
+    .hero-stats{gap:22px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="糖心vlog 首页">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+      </span>
+      糖心vlog
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="#categories">内容分类</a>
+      <a href="#highlights">内容看点</a>
+      <a href="#about">关于糖心vlog</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="head-cta" href="#categories">
+      开始浏览
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="展开导航" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>糖心vlog · 内容首页</span>
+        <h1>糖心vlog</h1>
+        <p class="hero-lead">糖心vlog 以短视频与日常记录为核心，把不同题材的片段整理成清晰的内容分区。无论你是第一次访问，还是想按兴趣找方向，都可以从下面的分类与看点开始，快速找到想看的糖心vlog内容。</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#categories">
+            浏览内容分类
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-ghost" href="#highlights">查看内容看点</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>4</b><span>内容分类方向</span></div>
+          <div class="stat"><b>6</b><span>栏目看点</span></div>
+          <div class="stat"><b>1</b><span>统一观看入口</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="screen">
+          <div class="screen-top"><i></i><i></i><i></i></div>
+          <div class="screen-body">
+            <div class="play-badge">
+              <svg viewBox="0 0 24 24" fill="#ff5c8a"><path d="M8 5l11 7-11 7V5z"/></svg>
+            </div>
+            <div class="screen-cap"><span>糖心vlog 内容预览</span><span>日常记录</span></div>
+          </div>
+        </div>
+        <div class="art-tags">
+          <span>日常记录</span><span>生活片段</span><span>短内容</span><span>轻松观看</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Content Map</div>
+        <h2>糖心vlog 的内容分类</h2>
+        <p>把糖心vlog的片段按观看习惯分组，方便你按兴趣直接进入对应方向，而不是逐条翻找。</p>
+      </div>
+      <div class="cat-grid">
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9l5 3-5 3V9z"/></svg></div>
+          <h3>日常记录</h3>
+          <p>围绕生活中的真实片段展开，节奏舒缓，适合放松时连续观看，也是糖心vlog最基础的内容类型。</p>
+          <span class="more">了解这一分类 →</span>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <h3>短内容片段</h3>
+          <p>时长精简、主题集中，适合碎片时间浏览；想先认识糖心vlog整体风格，可以从这一类入手。</p>
+          <span class="more">了解这一分类 →</span>
+        </article>
+        <article class="cat-card">
+          <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg></div>
+          <h3>主题合辑</h3>
+          <p>按主题把相关片段归在一起，便于一次看完同一方向的糖心vlog内容，减少来回切换。</p>
+          <span class="more">了解这一分类 →</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlights">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">Highlights</div>
+        <h2>浏览糖心vlog时的几个看点</h2>
+        <p>这些看点帮助你在进入页面后判断先看什么，也说明了糖心vlog在内容组织上的取舍。</p>
+      </div>
+      <div class="hl-wrap">
+        <div class="hl-item">
+          <div class="hl-num">01</div>
+          <div><h3>分区清楚</h3><p>糖心vlog按内容方向划分栏目，进入首页即可看到分类入口，不必先浏览大量无关片段。</p></div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">02</div>
+          <div><h3>片段为主</h3><p>内容以短片段为单位呈现，单个片段时间成本低，适合在通勤、休息等零散时段观看。</p></div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">03</div>
+          <div><h3>题材贴近日常</h3><p>糖心vlog的多数内容取材于生活场景，语言和画面都偏轻松，观看门槛不高。</p></div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">04</div>
+          <div><h3>便于连续观看</h3><p>同一主题的片段被放在一起，看完一条后可以顺着分类继续，适合想一次看多条的访问者。</p></div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">05</div>
+          <div><h3>入口集中</h3><p>糖心vlog把主要观看入口放在首屏与各分类卡片中，减少层级跳转，路径更直接。</p></div>
+        </div>
+        <div class="hl-item">
+          <div class="hl-num">06</div>
+          <div><h3>适合新访客</h3><p>第一次接触糖心vlog的访问者可以先读内容说明，再按分类挑选，避免盲目点开。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="about">
+        <div>
+          <h2>关于糖心vlog的内容定位</h2>
+          <p>糖心vlog是一个以短视频记录为主的內容主题，页面围绕观看需求组织：先给出分类，再说明各类内容的特点，最后提供统一入口。这样的安排让访问者不必在海量片段中反复试错。</p>
+          <p>对内容创作者与长期观众而言，糖心vlog的价值在于主题集中——同一方向的片段被放在一起，风格相对统一。你可以在分类页挑一个方向，也可以从合辑顺序看下去，两种方式都指向同一批内容。</p>
+          <p>需要说明的是，页面中的分类名称与看点描述用于帮助理解内容结构，具体片段以实际可观看内容为准，不同时间的内容更新节奏也可能存在差异。</p>
+        </div>
+        <div class="about-visual" aria-hidden="true">
+          <div class="mini-row"><div class="mini-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 12l5 5L20 6"/></svg></div><div><b>分类清晰</b><span>按方向进入，少走弯路</span></div></div>
+          <div class="mini-row"><div class="mini-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M3 12h18"/></svg></div><div><b>片段精简</b><span>单条时间短，随时可看</span></div></div>
+          <div class="mini-row"><div class="mini-dot"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M5 19V7a2 2 0 012-2h10a2 2 0 012 2v12"/><path d="M5 19h14"/></svg></div><div><b>合辑连贯</b><span>同主题内容一次看完</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker">FAQ</div>
+        <h2>常见问题</h2>
+        <p>关于糖心vlog的访问方式与内容范围，这里集中回答几个高频疑问。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>第一次访问糖心vlog，应该从哪里开始？</summary>
+          <p>建议先看首屏下方的内容分类，从中挑选一个感兴趣的方向，再进入对应栏目。这样比逐条浏览更快建立对糖心vlog整体风格的印象。</p>
+        </details>
+        <details>
+          <summary>糖心vlog的内容主要有哪些类型？</summary>
+          <p>页面按日常记录、短内容片段和主题合辑三类组织。三类之间并非互斥，同一片段也可能同时出现在不同分类下。</p>
+        </details>
+        <details>
+          <summary>观看糖心vlog需要注册账号吗？</summary>
+          <p>本页作为内容首页，主要提供分类与入口信息，不涉及账号体系说明。具体观看是否需要登录，以实际打开的内容页面为准。</p>
+        </details>
+        <details>
+          <summary>内容会持续更新吗？</summary>
+          <p>糖心vlog的内容更新节奏由发布方决定，页面本身不承诺固定频率。分类与看点的描述用于说明内容结构，不构成更新时间的保证。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>从分类进入，找到想看的糖心vlog内容</h2>
+          <p>挑一个方向开始浏览，或先了解栏目结构。糖心vlog的入口都集中在页面内，点击即可到达对应位置。</p>
+        </div>
+        <div class="band-actions">
+          <a class="btn-white" href="#categories">进入内容分类</a>
+          <a class="btn-line" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="logo-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+          </span>
+          糖心vlog
+        </a>
+        <p>糖心vlog 内容首页，整理分类、看点与入口信息，帮助访问者按兴趣快速找到对应内容。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#categories">内容分类</a>
+        <a href="#highlights">内容看点</a>
+        <a href="#about">关于糖心vlog</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <div class="foot-col">
+        <h4>分类入口</h4>
+        <a href="#categories">日常记录</a>
+        <a href="#categories">短内容片段</a>
+        <a href="#categories">主题合辑</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 糖心vlog 内容首页</span>
+      <span>页面内容用于介绍主题与浏览路径</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    if(!toggle || !nav) return;
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? '收起导航' : '展开导航');
+    });
+    nav.addEventListener('click', function(e){
+      if(e.target.tagName === 'A'){
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','展开导航');
+      }
+    });
+  })();
+</script>
+</body>
+</html>
